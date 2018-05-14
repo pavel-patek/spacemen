@@ -1,0 +1,19 @@
+AppBundle\Entity\Spaceman:
+    type: entity
+    table: spaceman
+    id:
+        id:
+            type: integer
+            generator: { strategy: AUTO }
+            unique: true
+    fields:
+        firstName:
+            type: string
+            length: 255
+        lastName:
+            type: string
+            length: 255
+        birthdate:
+            type: date            
+        superPower:
+            type: text

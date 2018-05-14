@@ -1,0 +1,19 @@
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation
+    
+spaceman_overview:    
+    path: spaceman/overview
+    defaults: { _controller: AppBundle:Spaceman:overview }
+    
+spaceman_add:
+    path: spaceman/add
+    defaults: { _controller: AppBundle:Spaceman:add }
+    
+spaceman_edit:
+    path: spaceman/edit/{id}
+    defaults: { _controller: AppBundle:Spaceman:edit }
+    
+spaceman_delete:
+    path: spaceman/delete/{id}
+    defaults: { _controller: AppBundle:Spaceman:delete }

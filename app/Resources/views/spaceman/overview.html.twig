@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}    
+    {% if spacemen %}
+        <table class="table">
+            <tr>
+                <th>ID</th>
+                <th>First name</th>
+                <th>Last name</th>
+                <th>Birthdate</th>
+                <th>Super Power</th>
+                <th>Actions</th>
+            </tr>
+        {% for spaceman in spacemen %}
+            <tr>
+                <td>{{ spaceman.getId }}</td>
+                <td>{{ spaceman.getFirstName }}</td>
+                <td>{{ spaceman.getLastName }}</td>
+                <td>{{ spaceman.getBirthdate|date('j.n.Y') }}</td>
+                <td>{{ spaceman.getSuperPower }}</td>
+                <td>
+                    <a href="{{ path('spaceman_edit', {'id':spaceman.getId}) }}" class="btn">Edit</a>
+                    <a href="{{ path('spaceman_delete', {'id':spaceman.getId}) }}" class="btn" onclick="return confirm('Are you sure?')">Delete</a>
+                </td>
+            </tr>
+        {% endfor %}
+        </table>
+    {% else %}
+        <p>No spaceman to show...</p>
+    {% endif %}
+    <a href="{{ path('spaceman_add') }}" class="btn">Create new spaceman</a>
+{% endblock %}

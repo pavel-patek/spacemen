@@ -1,0 +1,10 @@
+AppBundle\Entity\Spaceman:
+    properties:
+        firstName:
+            - NotBlank: ~
+        lastName:
+            - NotBlank: ~
+        birthdate:
+            - NotBlank: ~
+        superPower:
+            - NotBlank: ~
